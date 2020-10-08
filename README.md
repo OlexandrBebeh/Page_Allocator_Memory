@@ -3,15 +3,16 @@
 ## Page Memory Allocator on C++ 
 
 Realization of memory allocator using pages. All pages have same size. Pages could be in one of three state: free, devide into block, multipage block. Free pages could be used to be .Page devided into equal blocks. Size of block calculate **2^n**, where **n** starts from **CLASS_MIN**. 
-All pages have describers.
+All pages have describers.Describers consist of state of page, class of blocks, amount of free blocks and pointer to first free block.
+When page devides into blocks every block contain pointer to next free block.
 
 Constants:
 
-** MEMORY_SIZE ** - total size of memory we use.
+**MEMORY_SIZE** - total size of memory we use.
  
-** PAGE_SIZE ** - size of page in which devided total memory.
+**PAGE_SIZE** - size of page in which devided total memory.
 
-** CLASS_MIN ** - minimun digit for degree of 2. Another words 2^CLASS_MIN minimun size of block.
+**CLASS_MIN** - minimun digit for degree of 2. Another words 2^CLASS_MIN minimun size of block.
 
 Functions:
 
